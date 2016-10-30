@@ -1,12 +1,14 @@
-<h2>Users</h2>
+<h1>Users</h1>
 
 <% if current_user %>
-<h2>Hello <%= current_user.name %> </h2>
-<h3>Description: <%= current_user.description %></h3>
-<%= link_to 'Log Out', logout_path, method: :delete %>
+  <h2>Hello <%= current_user.name %> </h2>
+  <h3>Description: <%= current_user.description %></h3>
+  <%= link_to 'Log Out', logout_path, class: 'btn btn-info', method: :delete %>
 <% else %>
-
-<%= link_to 'Log In', login_path %>
-<br>
-<%= link_to 'Sign Up', new_user_path %>
+  <td>
+    <%= link_to 'Log In', login_path, class: 'btn btn-info' %>
+  </td>
+  <td>
+    <%= link_to 'Sign Up', new_user_path, class: 'btn btn-info' %>
+    </td>
 <% end %>
