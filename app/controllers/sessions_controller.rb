@@ -8,12 +8,13 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:login][:password])
       #set a cookie, so our browser knows we are who we say we are
       session[:user_id] = user.id.to_s
-      redirect_to users_path
+      redirect_to user
     else
       #give them another shot at logging in, perhaps by redirecting back to the login form_for
       render :new
     end
   end
+
 
   def destroy
     session.delete(:user_id)
