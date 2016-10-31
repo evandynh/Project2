@@ -1,36 +1,9 @@
 <h1>Sign Up</h1>
-<%= form_for @user do |f| %>
   <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= render 'form' %>
   </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div>
-    <%= f.label :date_of_birth %>
-    <%= f.date_field :dob %>
-  </div>
-
-  <div>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <td>
-    <%= f.submit 'Sign Up', class: 'btn btn-info' %>
-  </td>
-  <td>
-    <%= link_to 'Home', users_path, class: 'btn btn-info' %>
-  </td>
-<% end %>
+  <table>
+    <td>
+      <%= link_to 'Home', users_path, class: 'btn btn-primary' %>
+    </td>
+  </table>
