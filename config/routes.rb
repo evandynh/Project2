@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'categories/new'
+
+  get 'categories/show'
+
+  get 'categories/edit'
+
   root 'users#index'
 
   get 'users/:user_id/skills/new' => 'skills#new', as: :new_skill
