@@ -8,9 +8,10 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <div>
+  <td>
     <%= f.submit 'Log In', class: 'btn btn-info' %>
-  </div>
+  </td>
+  <td>
+    <%= link_to 'Home', users_path, class: 'btn btn-info' %>
+  </td>
 <% end %>
-
-<%= link_to 'Home', users_path, class: 'btn btn-info' %>
