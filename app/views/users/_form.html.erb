@@ -1,0 +1,35 @@
+
+<%= form_for @user do |f| %>
+  <div class="field form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :date_of_birth %>
+    <%= f.date_field :dob %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <table>
+    <td>
+      <%= f.submit 'Done', class: 'btn btn-primary' %>
+    </td>
+  </table>
+  <% end %>
