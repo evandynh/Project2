@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
   def index
     @users = User.all
   end
@@ -18,20 +19,25 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:user_id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to @user
     else
       render :edit
     end
   end
+  def show
+    
+  end
 private
 
   def user_params
     params.require(:user).permit(:name, :description, :dob, :email, :password, :password_confirmation)
+  end
+
+  def set_user
+    @user = User.find(session[:user_id])
   end
 end

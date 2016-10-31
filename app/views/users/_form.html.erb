@@ -27,9 +27,21 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
+
+  <%= f.fields_for :skill do |ff| %>
+    <div class="field form-group">
+      <%= ff.label :category_id %>
+      <%= ff.collection_select :category_id, Category.all, :id, :name %>
+    </div>
+    <div class="field form-group">
+      <%= ff.label :describe_skills %>
+      <%= ff.text_field :description %>
+    </div>
+  <% end %>
+
   <table>
     <td>
       <%= f.submit 'Done', class: 'btn btn-primary' %>
     </td>
   </table>
-  <% end %>
+<% end %>

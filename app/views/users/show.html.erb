@@ -1,10 +1,16 @@
 <h2>Hello <%= current_user.name %> </h2>
-<h3>Description: <%= current_user.description %></h3>
+<h3>Description: </h3>
+<%= current_user.description %>
+
 <ul>
-  <% @skills.each do |skill| %>
-  <li>
-    <%= skill.name %>
-  </li>
+  <% @user.categories.each do |category| %>
+    <h3><%= category.name %>:</h3>
+    <% @user.skills.each do |skill| %>
+    <li>
+      <%= skill.description %>
+    </li>
+    <% end %>
+  <% end %>
 </ul>
 <%= link_to 'Edit your information', edit_user_path(current_user), class: 'btn btn-primary' %>
 <%= link_to 'Log Out', logout_path, class: 'btn btn-primary', method: :delete %>
