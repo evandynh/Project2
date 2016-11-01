@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
+
   root 'users#index'
 
-  get 'categories/new' => 'categories#new'
+  # get 'messages/new' => 'messages#new', as: :new_message
+  # get 'messages/show'
+  # get 'messages/edit'
+
+  resources :from do
+    resources :messages
+  end
+
+  get 'categories/new' => 'categories#new', as: :new_category
   get 'categories/:id' => 'categories#show', as: :category
   get 'categories/:id/edit' => 'categories#edit', as: :edit_category
   patch 'categories/:id' => 'categories#update'
