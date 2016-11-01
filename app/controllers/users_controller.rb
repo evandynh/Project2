@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.skills.build
   end
 
   def create
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user.skills.build
   end
 
   def update
@@ -29,12 +31,12 @@ class UsersController < ApplicationController
     end
   end
   def show
-    
+
   end
 private
 
   def user_params
-    params.require(:user).permit(:name, :description, :dob, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :description, :dob, :email, :password, :password_confirmation, skills_attributes:[:category_id, :description, :price])
   end
 
   def set_user

@@ -1,3 +1,4 @@
+<h1>Profile</h1>
 <h2>Hello <%= current_user.name %> </h2>
 <h3>Description: </h3>
 <%= current_user.description %>
@@ -12,5 +13,6 @@
     <% end %>
   <% end %>
 </ul>
-<%= link_to 'Edit your information', edit_user_path(current_user), class: 'btn btn-primary' %>
+<%= link_to 'Edit Profile', edit_user_path(current_user), class: 'btn btn-primary' %>
+<%= link_to 'Home', users_path, class: 'btn btn-primary' %>
 <%= link_to 'Log Out', logout_path, class: 'btn btn-primary', method: :delete %>

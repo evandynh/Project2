@@ -15,7 +15,7 @@
   </div>
 
   <div class="field form-group">
-    <%= f.label :description %>
+    <%= f.label :interests %>
     <%= f.text_field :description %>
   </div>
 
@@ -28,14 +28,18 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <%= f.fields_for :skill do |ff| %>
+  <%= f.fields_for :skills do |ff| %>
     <div class="field form-group">
       <%= ff.label :category_id %>
       <%= ff.collection_select :category_id, Category.all, :id, :name %>
     </div>
     <div class="field form-group">
-      <%= ff.label :describe_skills %>
+      <%= ff.label :describe_skill %>
       <%= ff.text_field :description %>
+    </div>
+    <div class="field form-group">
+      <%= ff.label :price %>($)
+      <%= ff.number_field :price %>
     </div>
   <% end %>
 
