@@ -1,5 +1,9 @@
 class MessagesController < ApplicationController
 
+  def index
+    @received_messages = Message.where(to_id: current_user.id)
+    @sent_messages = Message.where(from_id: current_user.id)
+  end
   def new
     @message = Message.new
   end
@@ -12,8 +16,13 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @user = current_user
     @message = Message.new(params.require(:message).permit(:content))
-    @message.to = 
+    @message.to = User.find(params[:user_id])
+    @message.from = current_user
+    if @message.save
+      redirect_to messages_path(current_user)
+    else
+      render :new
+    end
   end
 end

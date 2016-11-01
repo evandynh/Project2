@@ -29,9 +29,13 @@
   </div>
 
   <%= f.fields_for :skills do |ff| %>
+  <% if ff.object.persisted? %>
+    <%= ff.check_box :_destroy  %>
+      <%= ff.label :delete %>
+    <% end %>
     <div class="field form-group">
       <%= ff.label :category_id %>
-      <%= ff.collection_select :category_id, Category.all, :id, :name %>
+      <%= ff.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
     </div>
     <div class="field form-group">
       <%= ff.label :describe_skill %>

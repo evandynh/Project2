@@ -8,8 +8,9 @@
       <h4><%= user.name %></h4> <strong>Interests:</strong> <br> <%= user.description %> <br>
       <strong>Skills:</strong> <br>
       <% user.skills.each do |skill| %>
-      - <%= skill.description %> <br>
+      * <%= skill.description %> <br>
       <% end %>
+      <%= link_to 'Message', new_message_path(user) %>
     </li> <br>
     <% end %>
   </ul>

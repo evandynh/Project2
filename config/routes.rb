@@ -2,14 +2,6 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  # get 'messages/new' => 'messages#new', as: :new_message
-  # get 'messages/show'
-  # get 'messages/edit'
-
-  resources :from do
-    resources :messages
-  end
-
   get 'categories/new' => 'categories#new', as: :new_category
   get 'categories/:id' => 'categories#show', as: :category
   get 'categories/:id/edit' => 'categories#edit', as: :edit_category
@@ -21,6 +13,14 @@ Rails.application.routes.draw do
   get 'users/:user_id/skills/:id/edit' => 'skills#edit', as: :edit_skill
   patch 'users/:user_id/skills/:id' => 'skills#update'
   delete 'users/:user_id/skills/:id' => 'skills#destroy'
+
+  get 'users/:user_id/messages' => 'messages#index', as: :messages
+  get 'users/:user_id/messages/new' => 'messages#new', as: :new_message
+  get 'users/:user_id/messages/:id' => 'messages#show', as: :message
+  get 'users/:user_id/messages/:id/edit' => 'messages#edit', as: :edit_message
+  post 'users/:user_id/messages' => 'messages#create'
+  patch 'users/:user_id/messages/:id' => 'messages#update'
+  delete 'users/:user_id/messages/:id' => 'messages#destroy'
 
 
   get 'users/' => 'users#index'
