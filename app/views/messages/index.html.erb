@@ -1,0 +1,8 @@
+<h3>Messages I have recieved</h3>
+<% @received_messages.each do |msg|%>
+  <%= msg.content %><br>
+<% end %>
+<h3>Messages I have sent</h3>
+<% @sent_messages.each do |msg|%>
+  <%= msg.content %><br>
+<% end %>
