@@ -27,8 +27,12 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    @message = Message.find(params[:user_id])
-    @message.destroy
-    redirect_to messages_path(current_user)
+    @message = Message.find(params[:id])
+    if @message.to == current_user || @message.from == current_user
+      @message.destroy
+      redirect_to messages_path(current_user)
+    else
+      redirect_to users_path
+    end
   end
 end

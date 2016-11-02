@@ -5,6 +5,7 @@
       <li>
         <h4>Message from <%= msg.from.name %></h4>
         <h5><%= msg.content %></h5> <br>
+        <%= link_to 'Delete Message', message_path(msg.to, msg), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-primary' %>
       <% end %>
       </li>
 
@@ -13,6 +14,7 @@
       <li>
         <h4>Message to <%= msg.to.name %></h4>
         <h5><%= msg.content %></h5> <br>
+        <%= link_to 'Delete Message', message_path(msg.to, msg), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-primary' %>
     <% end %>
     </li>
 </ul>
