@@ -1,4 +1,5 @@
 <h1>Home</h1>
+
 <% if current_user %>
   <h2>Hello <%= current_user.name %>! </h2> <br>
   <div class="picture">
@@ -21,16 +22,14 @@
   <%= link_to 'Your Profile', user_path(current_user), class: 'btn btn-primary' %>
   <%= link_to 'Log Out', logout_path, class: 'btn btn-primary', method: :delete %>
 <% else %>
+  <ul class="nav nav-pills", role="tablist", style="float:right">
+    <li class="active, navb"><%= link_to 'Log In', login_path, class: 'btn btn-primary' %></li>
+    <li class="active, navb"><%= link_to 'Sign Up', new_user_path, class: 'btn btn-primary' %></li>
+  </ul>
+  
   <h1>Welcome</h1>
 
   <h3>What do we offer?</h3>
   <h5>Is a community where you can find other women like you, with the same interests and/or necessities, where you can express your best skills and the best part is you can get something in return!</h5>
-  <table>
-    <td>
-      <%= link_to 'Log In', login_path, class: 'btn btn-primary' %>
-    </td>
-    <td>
-      <%= link_to 'Sign Up', new_user_path, class: 'btn btn-primary' %>
-    </td>
-  </table>
+
 <% end %>
