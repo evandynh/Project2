@@ -29,7 +29,7 @@
   </div>
 
   <%= f.fields_for :skills do |ff| %>
-  <% if ff.object.persisted? %>
+    <% if ff.object.persisted? %>
     <%= ff.check_box :_destroy  %>
       <%= ff.label :delete %>
     <% end %>

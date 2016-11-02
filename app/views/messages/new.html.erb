@@ -1,8 +1,10 @@
+<h2>Hello <%= current_user.name %> </h2>
+
 <h1>New Message</h1>
 <%= form_for @message do |f| %>
   <div class='field form-group'>
-    <%= f.label :message %>
-      <%= f.text_field :content %>
+    <% f.label :message %>
+      <%= f.text_area :content, :rows => 5, :cols => 40 %>
     <%= f.submit 'Send', class: 'btn btn-primary' %>
   </div>
 <% end %>

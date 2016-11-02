@@ -1,9 +1,17 @@
-<h3>Messages I have received:</h3>
+<h1><%= current_user.name %> Messages </h1>
+
+<h3>Received Messages:</h3>
 <% @received_messages.each do |msg|%>
-  <h4>- <%= msg.content %></h4><br>
+  <h4>Message from <%= msg.from.name %></h4>
+  <h5><%= msg.content %></h5> <br>
+  
 <% end %>
-<h3>Messages I have sent:</h3>
+<h3>Sent Messages:</h3>
+
 <% @sent_messages.each do |msg|%>
-  <h4>- <%= msg.content %></h4><br>
+  <h4>Message to <%= msg.to.name %></h4>
+  <h5><%= msg.content %></h5> <br>
 <% end %>
+
 <%= link_to 'Home', users_path, class: 'btn btn-primary' %>
+<%= link_to 'Your Profile', user_path(current_user), class: 'btn btn-primary' %>
