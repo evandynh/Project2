@@ -1,7 +1,7 @@
 <h1>Home</h1>
 <% if current_user %>
   <h2>Hello <%= current_user.name %>! </h2> <br>
-  <h3>Users:</h3> <br>
+  <h3>Users</h3> <br>
   <ul>
     <% @users.each do |user| %>
     <li>
@@ -10,7 +10,7 @@
       <% user.skills.each do |skill| %>
       * <%= skill.description %> <br>
       <% end %>
-      <%= link_to 'Message', new_message_path(user) %>
+      <%= link_to 'Send Message', new_message_path(user), class: 'btn btn-primary' %>
     </li> <br>
     <% end %>
   </ul>

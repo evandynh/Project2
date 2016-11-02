@@ -1,8 +1,9 @@
-<h3>Messages I have recieved</h3>
+<h3>Messages I have received:</h3>
 <% @received_messages.each do |msg|%>
-  <%= msg.content %><br>
+  <h4>- <%= msg.content %></h4><br>
 <% end %>
-<h3>Messages I have sent</h3>
+<h3>Messages I have sent:</h3>
 <% @sent_messages.each do |msg|%>
-  <%= msg.content %><br>
+  <h4>- <%= msg.content %></h4><br>
 <% end %>
+<%= link_to 'Home', users_path, class: 'btn btn-primary' %>
