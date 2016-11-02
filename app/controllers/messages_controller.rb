@@ -25,4 +25,10 @@ class MessagesController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @message = Message.find(params[:user_id])
+    @message.destroy
+    redirect_to messages_path(current_user)
+  end
 end
