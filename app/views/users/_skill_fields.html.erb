@@ -1,0 +1,19 @@
+  <div>
+    <% if f.object.persisted? %>
+      <%= f.check_box :_destroy  %>
+      <%= f.label :delete %>
+    <% end %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :describe_skill %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :price %>($)
+    <%= f.number_field :price %>
+  </div>
+  

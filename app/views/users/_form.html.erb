@@ -32,25 +32,11 @@
     <%= f.file_field :image%>
   </div> <br>
   <%= f.fields_for :skills do |ff| %>
-    <div>
-      <% if ff.object.persisted? %>
-        <%= ff.check_box :_destroy  %>
-        <%= ff.label :delete %>
-      <% end %>
-    </div>
-    <div class="field form-group">
-      <%= ff.label :category_id %>
-      <%= ff.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
-    </div>
-    <div class="field form-group">
-      <%= ff.label :describe_skill %>
-      <%= ff.text_field :description %>
-    </div>
-    <div class="field form-group">
-      <%= ff.label :price %>($)
-      <%= ff.number_field :price %>
-    </div>
+    <%= render 'skill_fields', f: ff %>
   <% end %>
+  <div>
+    <%= link_to_add_association 'Add Skill', f, :skills %>
+  </div>
   <div>
     <%= f.submit 'Done', class: 'btn btn-primary' %>
     <%= link_to 'Home', users_path, class: 'btn btn-primary' %>
