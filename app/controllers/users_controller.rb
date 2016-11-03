@@ -35,8 +35,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    redirect_to users_path
+    if current_user == @user
+      @user.destroy
+      redirect_to users_path
+    else
+      redirect_to current_user
+    end
   end
 private
 

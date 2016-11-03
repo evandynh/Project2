@@ -1,6 +1,9 @@
-<h1>Home</h1>
-
 <% if current_user %>
+<ul class="nav nav-pills", role="tablist", style="float:right">
+  <li class="active, navb"><%= link_to 'Your Profile', user_path(current_user), class: 'btn btn-primary' %></li>
+  <li class="active, navb"><%= link_to 'Log Out', logout_path, class: 'btn btn-primary', method: :delete %></li>
+</ul>
+<h1>Home</h1>
   <h2>Hello <%= current_user.name %>! </h2> <br>
   <div class="picture">
     <%= image_tag current_user.image.url(:med), class: 'img-rounded' %>
@@ -19,8 +22,6 @@
     </li> <br>
     <% end %>
   </ul>
-  <%= link_to 'Your Profile', user_path(current_user), class: 'btn btn-primary' %>
-  <%= link_to 'Log Out', logout_path, class: 'btn btn-primary', method: :delete %>
 <% else %>
   <ul class="nav nav-pills", role="tablist", style="float:right">
     <li class="active, navb"><%= link_to 'Log In', login_path, class: 'btn btn-primary' %></li>
