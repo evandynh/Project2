@@ -31,13 +31,13 @@
     <%= f.label :picture %>
     <%= f.file_field :image%>
   </div> <br>
-  <div>
-    <%= f.fields_for :skills do |ff| %>
-    <% if ff.object.persisted? %>
-    <%= ff.check_box :_destroy  %>
-    <%= ff.label :delete %>
-    <% end %>
-  </div>
+  <%= f.fields_for :skills do |ff| %>
+    <div>
+      <% if ff.object.persisted? %>
+        <%= ff.check_box :_destroy  %>
+        <%= ff.label :delete %>
+      <% end %>
+    </div>
     <div class="field form-group">
       <%= ff.label :category_id %>
       <%= ff.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
@@ -51,9 +51,8 @@
       <%= ff.number_field :price %>
     </div>
   <% end %>
-  <table>
-    <td>
-      <%= f.submit 'Done', class: 'btn btn-primary' %>
-    </td>
-  </table>
+  <div>
+    <%= f.submit 'Done', class: 'btn btn-primary' %>
+    <%= link_to 'Home', users_path, class: 'btn btn-primary' %>
+  </div>
 <% end %>

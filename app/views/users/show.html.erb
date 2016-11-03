@@ -6,13 +6,16 @@
 <ul>
   <h3>Description: </h3>
   <h5><%= @user.description %></h5>
-  <% @user.categories.each do |category| %>
-    <h3><%= category.name %>:</h3>
-    <% @user.skills.where(category: category).each do |skill| %>
-    <li>
-      <h5><%= skill.description %></h5>
-      <h5>Price: $<%= skill.price %></h5>
-    </li>
+  <%# @user.categories.each do |category| %>
+  <% Category.all.each do |category| %>
+    <% if @user.skills.where(category: category).count > 0 %>
+      <h3><%= category.name %>:</h3>
+      <% @user.skills.where(category: category).each do |skill| %>
+        <li>
+          <h5><%= skill.description %></h5>
+          <h5>Price: $<%= skill.price %></h5>
+        </li>
+      <% end %>
     <% end %>
   <% end %>
 </ul>
