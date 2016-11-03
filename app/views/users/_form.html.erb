@@ -35,8 +35,8 @@
     <%= render 'skill_fields', f: ff %>
   <% end %>
   <div>
-    <%= link_to_add_association 'Add Skill', f, :skills %>
-  </div>
+    <%= link_to_add_association 'Add Skill', f, :skills, class: 'label label-default' %>
+  </div> <br>
   <div>
     <%= f.submit 'Done', class: 'btn btn-primary' %>
     <%= link_to 'Home', users_path, class: 'btn btn-primary' %>
