@@ -32,8 +32,27 @@
 
   <h3>What do we offer?</h3>
   <h5>Is a community where you can find other women like you, with the same interests and/or necessities, where you can express your best skills and the best part is you can get something in return! Your plus... Create great friendships.</h5>
-  <div>
-    
+  <% @image_urls=["https://static1.squarespace.com/static/5575ed06e4b019b0586d393c/5633f4fee4b0e41cc45eb923/5633f508e4b062bdba18f030/1446245649856/Women+In+Tech+-+92.jpg", "http://wdy.h-cdn.co/assets/cm/15/09/54ebaae1869bb_-_women-cooking-xl.jpg", "http://s1.1zoom.me/big0/352/Fitness_group_of_women_451604.jpg"] %>
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+    <!-- Wrapper for slides -->
+    <div style='margin: auto'>
+      <%= carousel_for(@image_urls) %>
+    </div>
+
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
   </div>
 
 <% end %>

@@ -1,5 +1,7 @@
+
+<div>
 <h1>Log In</h1>
-<%= form_for :login do |f| %>
+  <%= form_for :login do |f| %>
   <div class="field form-group">
     <%= f.label :email %>
     <%= f.text_field :email %>
@@ -8,12 +10,10 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <table>
-    <td>
-      <%= f.submit 'Log In', class: 'btn btn-primary' %>
-    </td>
-    <td>
-      <%= link_to 'Home', users_path, class: 'btn btn-primary' %>
-    </td>
-  </table>
-<% end %>
+
+  <%= f.submit 'Log In', class: 'btn btn-primary' %>
+
+  <%= link_to 'Home', users_path, class: 'btn btn-primary' %>
+
+  <% end %>
+</div>

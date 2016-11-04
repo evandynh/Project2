@@ -1,3 +1,7 @@
+<ul class="nav nav-pills", role="tablist", style="float:right">
+  <li class="active, navb"><%= link_to 'Home', users_path, class: 'btn btn-primary' %></li>
+  <li class="active, navb"><%= link_to 'Your Profile', user_path(current_user), class: 'btn btn-primary' %></li>
+</ul>
 <h1><%= current_user.name %> Messages </h1>
 <ul>
     <h3>Received Messages:</h3>
@@ -18,6 +22,3 @@
     <% end %>
     </li>
 </ul>
-
-<%= link_to 'Home', users_path, class: 'btn btn-primary' %>
-<%= link_to 'Your Profile', user_path(current_user), class: 'btn btn-primary' %>

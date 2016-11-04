@@ -1,3 +1,13 @@
+<ul class="nav nav-pills", role="tablist", style="float:right">
+
+  <li class="active, navb"><%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-primary' if current_user == @user %></li>
+  <li class="active, navb"><%= link_to 'Delete Profile', user_path, class: 'btn btn-danger', method: :delete, data: {confirm: "Are you sure you want to delete your profile?"} if current_user == @user %></li>
+  <li class="active, navb"><%= link_to 'Home', users_path, class: 'btn btn-primary' %></li>
+  <li class="active, navb"><%= link_to 'Send Message', new_message_path(@user), class: 'btn btn-primary' if current_user != @user %></li>
+  <li class="active, navb"><%= link_to 'Messages', messages_path(@user), class: 'btn btn-primary' if current_user == @user %></li>
+  <li class="active, navb"><%= link_to 'Log Out', logout_path, class: 'btn btn-primary', method: :delete if current_user == @user%></li>
+</ul>
+
 <h1>Profile</h1>
 <h2> <%= @user.name %> </h2>
 <div class="picture">
@@ -19,11 +29,3 @@
     <% end %>
   <% end %>
 </ul>
-
-
-<%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-primary' if current_user == @user %>
-<%= link_to 'Delete Profile', user_path, class: 'btn btn-danger', method: :delete, data: {confirm: "Are you sure you want to delete your profile?"} if current_user == @user %>
-<%= link_to 'Home', users_path, class: 'btn btn-primary' %>
-<%= link_to 'Send Message', new_message_path(@user), class: 'btn btn-primary' if current_user != @user %>
-<%= link_to 'Messages', messages_path(@user), class: 'btn btn-primary' if current_user == @user %>
-<%= link_to 'Log Out', logout_path, class: 'btn btn-primary', method: :delete if current_user == @user%>
