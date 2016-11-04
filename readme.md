@@ -1,5 +1,9 @@
 ##LuxChange<br>
 
+
+![](assets/logo.jpg)
+
+
 ###Description <br>
 
 Welcome to LuxChange! Connect with others to exchange your talents. 
@@ -13,11 +17,13 @@ It's a community where you can express freely about your hobbies, interests, kno
 
 ###Technologies Used <br>
 <li> HTML5</li>
-<li> CSS3</li>
-<li> JavaScript</li>
+<li> Bootstrap </li>
+<li> SCSS</li>
+<li> SASS</li>
 <li> Ruby on Rails</li>
 <li> Active Record </li>
 <li> Heroku</li>
+<li>PostgreSQL</li>
 
 ###Wireframes<br>
 
@@ -25,20 +31,34 @@ It's a community where you can express freely about your hobbies, interests, kno
 
 ###ERD<br>
 
-![](assets/wireframes.jpg)
+![](assets/wireframe_update.jpg)
 
 ###Installation Instructions <br>
 
-- Download Instructions:
-
 	- Step 1: Clone the repository.
 
-	- Step 2: Open index.html in your browser.
+	- Step 2: Open app directory.
+	
+	- Step 3: Install gems.
+	
+	- Step 4: Open Rails server.
+	
+	- Step 5: In browser open: localhost:3000
 
 ###Approach Taken <br>
+During this project, I used gems like "cocoon", "bootstrap-sass", "twitter-bootstrap-rails". <br>
+- Cocoon: Used it to add a link to add a piece of form, to add more Skills in case the user needs it. <br>
+- Bootstrap-sass: Used it to add style with SASS. <br>
+- Twitter-bootstrap-rails: Used it to add the slide of images in the home page.
 
+I also got to understand more about nested routes and permissions of each user.
+
+Styles and links between views to give the user a fluid site navigation.
+
+AWS is used to upload images for the profile picture of the user.
 
 ###Unsolved Problems <br>
+Add Navbar for different aspects of the company, not enough time to do it.
 
 
 ###Links <br>
