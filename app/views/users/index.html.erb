@@ -11,7 +11,7 @@
   <h3>Users</h3> <br>
   <ul>
     <% @users.each do |user| %>
-    <li>
+    <li id="eachUser">
       <h4><%= link_to user.name, user_path(user) %></h4> <%= image_tag user.image.url(:small), class: 'img-rounded' %> <br> <strong>Interests:</strong> <br>
       <h5><%= user.description %></h5>
       <strong>Skills:</strong> <br>
