@@ -12,9 +12,9 @@
   <ul>
     <% @users.each do |user| %>
     <li id="eachUser">
-      <h4><%= link_to user.name, user_path(user) %></h4> <%= image_tag user.image.url(:small), class: 'img-rounded' %> <br> <strong>Interests:</strong> <br>
+      <h4><%= link_to user.name, user_path(user) %></h4> <%= image_tag user.image.url(:small), class: 'img-rounded' %> <br> <strong>INTERESTS</strong> <br>
       <h5><%= user.description %></h5>
-      <strong>Skills:</strong> <br>
+      <strong>SKILLS</strong> <br>
       <% user.skills.each do |skill| %>
       <h5>* <%= skill.description %></h5>
       <% end %>
